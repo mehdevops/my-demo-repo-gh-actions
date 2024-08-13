@@ -1,5 +1,7 @@
 name: Matrix Demo
 on: push
+  paths:
+      - ./.github/workflows/matrix.yaml
 jobs:
   build:
     strategy:
