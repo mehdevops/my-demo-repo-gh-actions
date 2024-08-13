@@ -1,10 +1,6 @@
 name: Website Deployment
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - ./.github/workflows/execution-flow.yml
+on: push
+    
 jobs:
   lint:
     runs-on: ubuntu-latest
