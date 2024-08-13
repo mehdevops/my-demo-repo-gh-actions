@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ./.github/workflows/execution-flow.yml
 jobs:
   lint:
     runs-on: ubuntu-latest
