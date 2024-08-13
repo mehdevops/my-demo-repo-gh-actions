@@ -1,7 +1,7 @@
 name: Matrix Demo
 on: 
   push:
-    branch:
+    branches:
       - main
     paths:
       - ./.github/workflows/matrix.yaml
