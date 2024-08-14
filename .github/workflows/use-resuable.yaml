@@ -65,4 +65,6 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/resuabale.yaml
+      with:
+        artifact-name: dist-files
     
