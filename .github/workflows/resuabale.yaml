@@ -1,8 +1,20 @@
 name: resuable deploy
 on: workflow_call
+  inputs:
+    artifact-name:
+      description: the name of deployable artifacts
+      required: false
+      default: dist
+      type: string
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps: 
-      - name: output info
-        run: echo "My name is mehtab"
+      - name: Get Code 
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.artifact-name }}
+      - name: List files
+        run: ls
+      - name: output information
+        run: echo  "Deploying"
