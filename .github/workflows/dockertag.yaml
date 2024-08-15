@@ -9,5 +9,10 @@ jobs:
     steps:
       - name: var echo
         run: echo ${{ env.test }}  
+  repo_info2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 2 var
+        run: echo ${{ repo_info.env.test }}
   
     
