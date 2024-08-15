@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: var echo
-        run: echo ${{ test }}
+        run: echo ${{ env.test }}
