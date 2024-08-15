@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: var 2 echo
-        run: echo ${{ repo-info.env.test}}
+        run: echo ${{ repo_info.env.test}}
     
