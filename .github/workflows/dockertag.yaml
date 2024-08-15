@@ -1,10 +1,17 @@
 name: Docker Image tag
 on: workflow_dispatch
-env:
-  test: 'my-world'
+
 jobs:
   repo_info:
     runs-on: ubuntu-latest
+    env:
+      test: 'my-world'
     steps:
       - name: var echo
-        run: echo ${{ env.test }}
+        run: echo ${{ env.test }}  
+  repo-info2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: var 2 echo
+        run: echo ${{ repo-info.env.test}}
+    
