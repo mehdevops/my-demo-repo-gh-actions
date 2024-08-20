@@ -3,12 +3,14 @@ on:
   workflow_dispatch:
     inputs:
       FEATURE_BRANCH_NAME:
-      description: 'Freature Branch name that need to be scanned'
-      required: false
-      type: string
-      default: main
+        description: 'Freature Branch name that need to be scanned'
+        required: false
+        type: string
+        default: main
     
 jobs:
   test:
-    - name: my test app
-      run: echo "sanitized_branch=${inputs.FEATURE_BRANCH_NAME/\//-}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: my test app
+        run: echo "sanitized_branch=${inputs.FEATURE_BRANCH_NAME/\//-}"
