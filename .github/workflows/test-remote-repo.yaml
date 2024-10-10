@@ -1,4 +1,4 @@
-name: SCI008-SCA-Scanning
+name: sanitize branch test
 on:
   workflow_dispatch:
     inputs:
