@@ -12,5 +12,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: my test app
-        run: echo "sanitized_branch=${inputs.FEATURE_BRANCH_NAME/\//-}"
+      - name: Extract branch name
+        id: extract_branch
+        run: |
+         echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> "${GITHUB_OUTPUT}"
+         echo "sanitized_branch=${GITHUB_REF_NAME/\//-}" >> "${GITHUB_OUTPUT}"
+    outputs:
+     sanitized_branch: ${{ steps.extract_branch.outputs.sanitized_branch }}
