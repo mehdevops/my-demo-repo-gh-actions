@@ -9,7 +9,18 @@ on:
         default: main
     
 jobs:
-  test:
+  build-test-push:
+    runs-on: ubuntu-latest
+    name: "build"
+    needs: [init]
+    steps:
+        # Checkout the code
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            # Disabling shallow clones is recommended for improving the relevancy of reporting
+            fetch-depth: 0
+  init:
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
