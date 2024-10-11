@@ -37,5 +37,17 @@ jobs:
           else
               echo "This is not the tag "
           fi
+      - name: echo
+        run: | 
+          echo "cncp-secret-management-${{ needs.init.outputs.branch }}"
+           echo
     outputs:
      sanitized_branch: ${{ steps.extract_branch.outputs.sanitized_branch }}
+     CX_VERSION: cncp-secret-management-${{ steps.cx-scan-project-version.outputs.CX_VERSION }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        id: test
+        run: |
+          echo "cncp-secret-management${{ needs.init.outputs.branch }}"
