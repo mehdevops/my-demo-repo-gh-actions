@@ -29,7 +29,7 @@ jobs:
          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> "${GITHUB_OUTPUT}"
          echo "sanitized_branch=${GITHUB_REF_NAME/\//-}" >> "${GITHUB_OUTPUT}"
       - name: CX scan Project version
-        if: ${{ github.ref_type }} == 'tag'
+        if: ${{ github.ref_type == 'tag' }}
         id: cx-scan-project-version
         run: |
               echo "CX_VERSION=${{ steps.extract_branch.outputs.sanitized_branch }}" >> $GITHUB_OUTPUT
