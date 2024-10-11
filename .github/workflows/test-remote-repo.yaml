@@ -36,5 +36,6 @@ jobs:
               echo "CX_VERSION=${{ steps.extract_branch.outputs.sanitized_branch }}" >> $GITHUB_OUTPUT
           else
               echo "This is not the tag "
+          fi
     outputs:
      sanitized_branch: ${{ steps.extract_branch.outputs.sanitized_branch }}
