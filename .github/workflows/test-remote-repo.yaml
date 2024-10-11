@@ -7,7 +7,7 @@ on:
         required: false
         type: string
         default: main
-    
+  
 jobs:
   build-test-push:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           if [[ ${{ github.ref_type == 'tag' }} ]]; then
               echo "CX_VERSION=-${{ steps.extract_branch.outputs.sanitized_branch }}" >> $GITHUB_OUTPUT
           else
-              echo "This is not the tag "
+              echo "CX_VERSION=" >> $GITHUB_OUTPUT
           fi
       - name: echo
         run: | 
@@ -50,4 +50,6 @@ jobs:
       - name: test
         id: test
         run: |
-          echo "cncp-secret-management${{ needs.init.outputs.CX_VERSION }}"
+         # echo "cncp-secret-management${{ needs.init.outputs.CX_VERSION }}"
+         echo 
+         
