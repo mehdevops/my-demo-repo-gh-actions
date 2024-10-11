@@ -32,7 +32,9 @@ jobs:
         
         id: cx-scan-project-version
         run: |
-          if [[ ${{ github.ref_type == 'tag' }} ]]
+          if [[ ${{ github.ref_type == 'tag' }} ]]; then
               echo "CX_VERSION=${{ steps.extract_branch.outputs.sanitized_branch }}" >> $GITHUB_OUTPUT
+          else
+              echo "This is not the tag "
     outputs:
      sanitized_branch: ${{ steps.extract_branch.outputs.sanitized_branch }}
