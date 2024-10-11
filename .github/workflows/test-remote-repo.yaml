@@ -50,4 +50,4 @@ jobs:
       - name: test
         id: test
         run: |
-          echo "cncp-secret-management${{ needs.init.outputs.branch }}"
+          echo "cncp-secret-management${{ needs.init.outputs.CX_VERSION }}"
