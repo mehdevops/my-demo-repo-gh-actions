@@ -19,3 +19,5 @@ jobs:
         run: ls
       - name: output information
         run: echo  "Deploying"
+      - name: output my github context
+        run: echo "${{ toJSON(github) }}"
